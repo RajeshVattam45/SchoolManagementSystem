@@ -1,0 +1,40 @@
+﻿@model SchoolManagementSystem.Models.Subject
+
+@{
+    ViewData["Title"] = "Edit Subject";
+}
+
+<h2>Edit Subject</h2>
+
+<form asp-action="Edit">
+
+    <div class="form-group">
+        <label asp-for="SubjectId" class="control-label"></label>
+        <input asp-for="SubjectId" class="form-control" />
+        <span asp-validation-for="SubjectId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SubjectName" class="control-label"></label>
+        <input asp-for="SubjectName" class="form-control" />
+        <span asp-validation-for="SubjectName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EmployeeId" class="control-label">Assigned Teacher</label>
+        <select asp-for="EmployeeId" class="form-control">
+            <option value="">-- Select Employee --</option>
+            @foreach (var employee in ViewBag.Employees)
+            {
+                <option value="@employee.Id" selected="@(employee.Id == Model.EmployeeId ? "selected" : null)">
+                    @employee.FirstName @employee.LastName
+                </option>
+            }
+        </select>
+        <span asp-validation-for="EmployeeId" class="text-danger"></span>
+    </div>
+
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

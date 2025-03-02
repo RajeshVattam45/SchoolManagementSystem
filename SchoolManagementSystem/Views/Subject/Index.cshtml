@@ -1,0 +1,24 @@
+﻿@model IEnumerable<SchoolManagementSystem.Models.Subject>
+
+<h2>Subjects List</h2>
+<table class="table">
+    <tr>
+        <th>Subject ID</th>
+        <th>Subject Name</th>
+        <th>Assigned Teacher</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var subject in Model)
+    {
+        <tr>
+            <td>@subject.SubjectId</td>
+            <td>@subject.SubjectName</td>
+            <td>@subject.Employee?.FirstName</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@subject.Id" class="btn btn-warning">Edit</a>
+                <a asp-action="Delete" asp-route-id="@subject.Id" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<a asp-action="Create" class="btn btn-primary">Create New Subject</a>

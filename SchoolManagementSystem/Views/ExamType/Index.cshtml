@@ -1,0 +1,30 @@
+﻿@model IEnumerable<SchoolManagementSystem.Models.ExamType>
+
+<h2>Exam Types</h2>
+<a asp-action="Create" class="btn btn-primary">Add New Exam Type</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Exam Type ID</th>
+            <th>Exam Type Name</th>
+            <th>Max Marks</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.ExamTypeId</td>
+                <td>@item.ExamTypeName</td>
+                <td>@item.MaxMarks</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

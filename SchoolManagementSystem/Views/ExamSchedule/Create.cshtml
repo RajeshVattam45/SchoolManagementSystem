@@ -1,0 +1,35 @@
+﻿@model SchoolManagementSystem.MVC.Entites.Models.ExamSchedule
+
+<h2>Schedule Exam</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label>Exam</label>
+        <select asp-for="ExamId" asp-items="ViewBag.Exams" class="form-control"></select>
+    </div>
+    <div class="form-group">
+        <label>Class</label>
+        <select asp-for="ClassId" asp-items="ViewBag.Classes" class="form-control"></select>
+    </div>
+    <div class="form-group">
+        <label>Subject</label>
+        <select asp-for="SubjectId" asp-items="ViewBag.Subjects" class="form-control"></select>
+    </div>
+    <div class="form-group">
+        <label>Exam Date</label>
+        <input asp-for="ExamDate" type="date" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Start Time</label>
+        <input asp-for="StartTime" type="time" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>End Time</label>
+        <input asp-for="EndTime" type="time" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Room Number</label>
+        <input asp-for="RoomNumber" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+</form>

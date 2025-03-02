@@ -1,0 +1,129 @@
+﻿@model SchoolManagementSystem.Models.Student
+
+@{
+    ViewData["Title"] = "Edit Student";
+}
+<div class="container">
+    
+<h2>Edit Student</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        @* <label asp-for="StudentId"></label> *@
+        <label class="control-label">Student Id</label>
+        <input asp-for="StudentId" class="form-control" />
+        <span asp-validation-for="StudentId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        @* <label asp-for="FirstName"></label> *@
+        <label class="control-label">First Name</label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        @* <label asp-for="LastName"></label> *@
+        <label class="control-label">Last Name</label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        @* <label asp-for="PhoneNumber"></label> *@
+        <label class="control-label">Phone Number</label>
+        <input asp-for="PhoneNumber" class="form-control" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        @* <label asp-for="Role"></label> *@
+        <label class="control-label">Role</label>
+        <input asp-for="Role" class="form-control" />
+        <span asp-validation-for="Role" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        @* <label asp-for="PermanentAddress"></label> *@
+        <label class="control-label">Permanent Address</label>
+        <input asp-for="PermanentAddress" class="form-control" />
+        <span asp-validation-for="PermanentAddress" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        @* <label asp-for="CurrentAddress"></label> *@
+        <label class="control-label">Current Address</label>
+        <input asp-for="CurrentAddress" class="form-control" />
+        <span asp-validation-for="CurrentAddress" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        @* <label asp-for="Pincode"></label> *@
+        <label class="control-label">Pincode</label>
+        <input asp-for="Pincode" class="form-control" />
+        <span asp-validation-for="Pincode" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        @* <label asp-for="Age"></label> *@
+        <label class="control-label">Age</label>
+        <input asp-for="Age" class="form-control" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        @* <label asp-for="DateOfBirth"></label> *@
+        <label class="control-label">Date-Of-Birth</label>
+        <input asp-for="DateOfBirth" class="form-control" type="date" />
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        @* <label asp-for="FatherName"></label> *@
+        <label class="control-label">Father Name</label>
+        <input asp-for="FatherName" class="form-control" />
+        <span asp-validation-for="FatherName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        @* <label asp-for="FatherPhoneNumber"></label> *@
+        <label class="control-label">Father Phone Number</label>
+        <input asp-for="FatherPhoneNumber" class="form-control" />
+        <span asp-validation-for="FatherPhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        @* <label asp-for="PreviousSchool"></label> *@
+        <label class="control-label">Previous School</label>
+        <input asp-for="PreviousSchool" class="form-control" />
+        <span asp-validation-for="PreviousSchool" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        @* <label asp-for="PreviousSchoolPercentage"></label> *@
+        <label class="control-label">Previous School Percentage</label>
+        <input asp-for="PreviousSchoolPercentage" class="form-control" />
+        <span asp-validation-for="PreviousSchoolPercentage" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        @* <label asp-for="Email"></label> *@
+        <label class="control-label">Email</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        @* <label asp-for="ClassId"></label> *@
+        <label class="control-label">Class</label>
+        <input asp-for="ClassId" class="form-control" />
+        <span asp-validation-for="ClassId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-warning">Update</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+</div>

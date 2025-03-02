@@ -1,0 +1,52 @@
+﻿@model IEnumerable<SchoolManagementSystem.Models.Employee>
+
+@{
+    ViewData["Title"] = "All Employees";
+}
+
+<p>Displaying Students</p>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Employee ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone Number</th>
+            <th>Role</th>
+            <th>Permenent address</th>
+            <th>Current Address</th>
+            <th>Pincode</th>
+            <th>Current salary</th>
+            <th>Employee Type</th>
+            <th>Mail</th>                    
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+
+                <td>@employee.EmployeeId</td>
+                <td>@employee.FirstName</td>
+                <td>@employee.LastName</td>
+                <td>@employee.PhoneNumber</td>
+                <td>@employee.Role</td>
+                <td>@employee.CurrentAddress</td>
+                <td>@employee.PermanentAddress</td>
+                <td>@employee.Pincode</td>
+                <td>@employee.EmployeeSalary</td>
+                <td>@employee.EmployeeType</td>
+                <td>@employee.Email</td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Employee" asp-route-id="@employee.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-controller="Employee" asp-route-id="@employee.Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" asp-controller="Employee" class="btn btn-primary">Add New Employee</a>

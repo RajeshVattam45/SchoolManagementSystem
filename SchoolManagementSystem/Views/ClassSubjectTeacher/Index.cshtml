@@ -1,0 +1,23 @@
+﻿@model List<SchoolManagementSystem.MVC.Entities.Models.ClassSubjectTeacher>
+
+<h2>Class-Subject-Teacher List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Class</th>
+            <th>Subject</th>
+            <th>Teacher</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@(item.Class?.ClassName ?? "N/A")</td>
+                <td>@(item.Subject?.SubjectName ?? "N/A")</td>
+                <td>@(item.Employee?.FirstName ?? "N/A")</td>
+            </tr>
+        }
+    </tbody>
+</table>

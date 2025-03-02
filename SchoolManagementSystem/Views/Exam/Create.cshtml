@@ -1,0 +1,25 @@
+﻿@model SchoolManagementSystem.MVC.Entites.Models.Exam
+
+<h2>Add Exam</h2>
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label>Exam Name</label>
+        <input asp-for="ExamName" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Exam Date</label>
+        <input asp-for="ExamDate" type="date" class="form-control" required />
+    </div>
+    @* <div class="form-group"> *@
+    @*     <label>Exam Type</label> *@
+    @*     <select asp-for="ExamTypeId" asp-items="ViewBag.ExamTypes" class="form-control"></select> *@
+    @* </div> *@
+    <div class="form-group">
+        <label asp-for="ExamTypeId" class="control-label"></label>
+        <select asp-for="ExamTypeId" asp-items="ViewBag.ExamTypes" class="form-control">
+            <option value="">-- Select Exam Type --</option>
+        </select>
+        <span asp-validation-for="ExamTypeId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+</form>

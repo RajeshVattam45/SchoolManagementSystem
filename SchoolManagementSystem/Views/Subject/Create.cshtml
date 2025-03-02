@@ -1,0 +1,26 @@
+﻿@model SchoolManagementSystem.Models.Subject
+
+<h2>Create Subject</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label>Subject ID</label>
+        <input asp-for="SubjectId" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Subject Name</label>
+        <input asp-for="SubjectName" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Assign to Teacher</label>
+        <select asp-for="EmployeeId" class="form-control">
+            <option value="">Select a Teacher</option>
+            @foreach (var emp in (IEnumerable<SchoolManagementSystem.Models.Employee>)ViewBag.Employees)
+            {
+                <option value="@emp.Id">@emp.FirstName</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

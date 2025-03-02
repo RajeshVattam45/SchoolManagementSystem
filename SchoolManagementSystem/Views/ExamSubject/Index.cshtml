@@ -1,0 +1,27 @@
+﻿@model List<SchoolManagementSystem.MVC.Entites.Models.ExamSubject>
+
+<h2>Exam Subjects List</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Exam Subject ID</th>
+            <th>Exam Name</th>
+            <th>Exam Date</th>
+            <th>Subject ID</th>
+            <th>Subject Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var examSubject in Model)
+        {
+            <tr>
+                <td>@examSubject.Id</td>
+                <td>@examSubject.Exam.ExamName</td>
+                <td>@examSubject.Exam.ExamDate.ToString("yyyy-MM-dd")</td>
+                <td>@examSubject.SubjectId</td>
+                <td>@examSubject.Subject.SubjectName</td>
+            </tr>
+        }
+    </tbody>
+</table>

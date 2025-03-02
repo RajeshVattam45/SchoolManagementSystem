@@ -1,0 +1,19 @@
+﻿@model SchoolManagementSystem.MVC.Entites.Models.ExamSubject
+
+<h2>Add Exam Subject</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="ExamId">Exam ID:</label>
+        <input type="number" asp-for="ExamId" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="SubjectId">Subject ID:</label>
+        <input type="number" asp-for="SubjectId" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Exam Subject</button>
+</form>
+
+<a asp-action="Index">Back to List</a>

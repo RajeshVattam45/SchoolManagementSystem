@@ -1,0 +1,15 @@
+﻿@* @model IEnumerable<SchoolManagementSystem.Models.Student>  *@
+
+<p>My Profile</p>
+
+
+<h2>Employee Profile</h2>
+<div>
+    <p><strong>Name:</strong> @Model.FirstName</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+    <p><strong>Enrollment Number:</strong> @Model.EmployeeId</p>
+</div>
+
+<a href="@Url.Action("Logout", "Account")">Logout</a>
+<br />
+<a href="@Url.Action("Dashboard", "Home")">Back</a>

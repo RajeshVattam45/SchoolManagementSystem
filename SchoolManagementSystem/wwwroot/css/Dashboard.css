@@ -1,0 +1,76 @@
+﻿body {
+    background-color: aliceblue;
+}
+
+/* General Styles */
+.dashboard-container {
+    max-width: 900px;
+}
+
+/* Role Display */
+p strong {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Cards */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+    .card:hover {
+        transform: scale(1.02);
+    }
+
+    /* Admin Panel */
+    .card.admin-panel {
+        background-color: #007bff;
+        color: white;
+    }
+
+    /* Student Panel */
+    .card.student-panel {
+        background-color: #28a745;
+        color: white;
+    }
+
+    /* Teacher Panel */
+    .card.teacher-panel {
+        background-color: #ffc107;
+        color: black;
+    }
+
+    /* Login Card */
+    .card.login-card {
+        background-color: #f8f9fa;
+        border-left: 5px solid #dc3545;
+    }
+
+/* Links */
+ul {
+    padding-left: 0;
+}
+
+    ul li {
+        list-style: none;
+        margin: 10px 0;
+    }
+
+        ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+
+            ul li a:hover {
+                background: rgba(255, 255, 255, 0.4);
+            }

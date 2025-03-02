@@ -1,0 +1,71 @@
+﻿<link rel="stylesheet" href="~/css/Dashboard.css" asp-append-version="true" />
+<div class="dashboard-container mt-5">
+    @if (@ViewBag.UserRole != null)
+    {
+        <p><strong>@ViewBag.UserRole</strong>: Displaying your data</p>
+    }
+    else
+    {
+        <div class="card login-card">
+            <div class="card-body">
+                <h4>Please Login To The Page</h4>
+                <ul>
+                    <li><a class="btn btn-primary text-light" asp-controller="Account" asp-action="Login">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    }
+
+    @if (ViewBag.UserRole == "Admin")
+    {
+        <div class="card admin-panel">
+            <div class="card-body">
+                <h4>Admin Panel</h4>
+                <ul>
+                    <li><a asp-controller="Students" asp-action="Create">Add Student</a></li>
+                    <li><a asp-controller="Employee" asp-action="Create">Add Employee</a></li>
+                    <li><a asp-controller="Students" asp-action="Index">Manage Student</a></li>
+                    <li><a asp-controller="Employee" asp-action="Index">Manage Employee</a></li>
+                    <li><a asp-controller="Class" asp-action="Index">Manage Classes</a></li>
+                    <li><a asp-controller="Class" asp-action="Create">Create Class</a></li>
+                    <li><a asp-controller="Subject" asp-action="Index">Manage Subjects</a></li>
+                    <li><a asp-controller="Subject" asp-action="Create">Create Subject</a></li>
+                    <li><a asp-controller="Exam" asp-action="Index">Manage Exam</a></li>
+                    <li><a asp-controller="ExamType" asp-action="Index">Manage Exam Types</a></li>
+                    <li><a asp-controller="ExamSubject" asp-action="Index">Manage Exam Subjects</a></li>
+                    <li><a asp-controller="ExamSubject" asp-action="Create">Create Exam Subjects</a></li>
+                    <li><a asp-controller="ExamSchedule" asp-action="Index">Manage Exam Schedule</a></li>
+                    <li><a asp-controller="ClassSubjectTeacher" asp-action="Index">Class Subject Teacher</a></li>
+                </ul>
+            </div>
+        </div>
+    }
+    else if (ViewBag.UserRole == "Student")
+    {
+        <div class="card student-panel">
+            <div class="card-body">
+                <h4>Student Panel</h4>
+                <ul>
+                    <li><a asp-controller="Students" asp-action="StudentProfile">View Your Profile</a></li>
+                    <li><a asp-controller="Students" asp-action="StudentMarks">View Your Marks</a></li>
+                    <li><a asp-controller="Student" asp-action="StudentAttendance">Check Attendance</a></li>
+                    <li><a asp-controller="Events" asp-action="Index">Upcoming Events</a></li>
+                </ul>
+            </div>
+        </div>
+    }
+    else if (ViewBag.UserRole == "Teacher")
+    {
+        <div class="card teacher-panel">
+            <div class="card-body">
+                <h4>Teacher Panel</h4>
+                <ul>
+                    <li><a asp-controller="Employee" asp-action="EmployeeProfile">View Your Profile</a></li>
+                    <li><a asp-controller="Teacher" asp-action="EmployeeAttendance">Mark Attendance</a></li>
+                    <li><a asp-controller="Teacher" asp-action="EmployeeSubjects">Manage Subjects</a></li>
+                    <li><a asp-controller="Events" asp-action="Index">Upcoming Events</a></li>
+                </ul>
+            </div>
+        </div>
+    }
+</div>

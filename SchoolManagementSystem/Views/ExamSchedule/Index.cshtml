@@ -1,0 +1,32 @@
+﻿@model IEnumerable<SchoolManagementSystem.MVC.Entites.Models.ExamSchedule>
+
+<h2>Exam Schedule</h2>
+<a asp-action="Create" class="btn btn-primary">Schedule New Exam</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Exam Name</th>
+            <th>Class</th>
+            <th>Subject</th>
+            <th>Exam Date</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Room</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var schedule in Model)
+        {
+            <tr>
+                <td>@schedule.Exam.ExamName</td>
+                <td>@schedule.Class.ClassName</td>
+                <td>@schedule.Subject.SubjectName</td>
+                <td>@schedule.ExamDate.ToShortDateString()</td>
+                <td>@schedule.StartTime</td>
+                <td>@schedule.EndTime</td>
+                <td>@schedule.RoomNumber</td>
+            </tr>
+        }
+    </tbody>
+</table>
