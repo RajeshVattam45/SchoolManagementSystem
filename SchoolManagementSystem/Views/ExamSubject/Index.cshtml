@@ -1,6 +1,8 @@
 ﻿@model List<SchoolManagementSystem.MVC.Entites.Models.ExamSubject>
 
 <h2>Exam Subjects List</h2>
+<a class="btn btn-danger" asp-action="Dashboard" asp-controller="Home">Back to List</a>
+<a class="btn btn-primary" asp-action="Create">Create</a>
 
 <table class="table table-bordered">
     <thead>
@@ -21,6 +23,10 @@
                 <td>@examSubject.Exam.ExamDate.ToString("yyyy-MM-dd")</td>
                 <td>@examSubject.SubjectId</td>
                 <td>@examSubject.Subject.SubjectName</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@examSubject.Id" class="btn btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@examSubject.Id" class="btn btn-danger">Delete</a>
+                </td>
             </tr>
         }
     </tbody>

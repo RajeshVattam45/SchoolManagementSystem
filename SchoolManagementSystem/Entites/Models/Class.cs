@@ -20,5 +20,7 @@ namespace SchoolManagementSystem.Models
         public ICollection<StudentFees>? StudentFees { get; set; }
         public ICollection<Marks>? Marks { get; set; }
         public ICollection<StudentAttendance>? StudentAttendances { get; set; }
+        public ICollection<FeePayment>? FeePayments { get; set; }
+        public ICollection<Timetable>? Timetables { get; set; }
     }
 }

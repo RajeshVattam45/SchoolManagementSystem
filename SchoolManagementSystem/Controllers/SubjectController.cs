@@ -86,29 +86,6 @@ namespace SchoolManagementSystem.MVC.Controllers
             return View ( subject );
         }
 
-
-        // GET: Subject/Delete/5
-        //public async Task<IActionResult> Delete ( int id )
-        //{
-        //    var subject = _subjectService.GetSubjectById ( id );
-
-        //    if ( subject == null )
-        //    {
-        //        return NotFound ();
-        //    }
-
-        //    return View ( subject );
-        //}
-
-        //// POST: Subject/Delete/5
-        //[HttpPost, ActionName ( "Delete" )]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> DeleteConfirmed ( int id )
-        //{
-        //    _subjectService.DeleteSubject ( id );
-        //    return RedirectToAction ( nameof ( Index ) );
-        //}
-
         public async Task<IActionResult> Delete ( int id )
         {
             var student =  _subjectService.GetSubjectById ( id );

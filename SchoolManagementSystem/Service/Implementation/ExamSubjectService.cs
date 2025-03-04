@@ -24,5 +24,24 @@ namespace SchoolManagementSystem.Service.Implementation
             return await _examSubjectRepository.AddExamSubjectAsync ( examSubject );
         }
 
+        public async Task DeleteExamSubject(int id)
+        {
+            await _examSubjectRepository.DeleteExamSubjectAsync( id );
+        }
+
+        public async Task<ExamSubject> GetExamSubjectById ( int id )
+        {
+           return await _examSubjectRepository.GetExamSubjectByIdAsync ( id );
+        }
+
+        public async Task UpdateExamSubject ( ExamSubject examSubject )
+        {
+            await _examSubjectRepository.UpdateExamSubjectAsync ( examSubject );
+        }
+
+        //public async Task GetExamSubjectById ( int id )
+        //{
+        //    await _examSubjectRepository.GetExamSubjectByIdAsync ( id );
+        //}
     }
 }

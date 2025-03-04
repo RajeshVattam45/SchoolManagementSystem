@@ -73,8 +73,10 @@ namespace SchoolManagementSystem.Models
         public Class? Class { get; set; }
 
         public ICollection<StudentFees>? StudentFees { get; set; }
+        public ICollection<FeePayment>? FeePayments { get; set; }
         public ICollection<Marks>? Marks { get; set; }
         public ICollection<StudentAttendance>? StudentAttendance { get; set; }
+        public ICollection<LibraryTransactions>? LibraryTransactions { get; set; }
 
     }
 }

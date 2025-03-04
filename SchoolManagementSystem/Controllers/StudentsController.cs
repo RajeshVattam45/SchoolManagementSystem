@@ -121,21 +121,6 @@ namespace SchoolManagementSystem.Controllers
             return RedirectToAction ( nameof ( Index ) );
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> StudentProfile ( )
-        //{
-
-        //    var email = User.Identity.Name; // Retrieve the logged-in user's email
-        //    var student = await _studentService.GetStudentByEmailAsync ( email );
-
-        //    if (student == null)
-        //    {
-        //        return NotFound ( "Student not found" );
-        //    }
-
-        //    return View ( student );
-        //}
-
         [AuthorizeUser ( "Student" )]
         public async Task<IActionResult> StudentProfile ( )
         {
@@ -166,5 +151,7 @@ namespace SchoolManagementSystem.Controllers
         {
             return View();
         }
+
+
     }
 }

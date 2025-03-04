@@ -29,5 +29,6 @@ namespace SchoolManagementSystem.Models
         public ICollection<Subject>? Subjects { get; set; }
         public ICollection<ClassSubjectTeacher>? ClassSubjectTeachers { get; set; }
         public ICollection<EmployeeAttendance>? employeeAttendances { get; set; }
+        public ICollection<Timetable>? Timetables { get; set; }
     }
 }

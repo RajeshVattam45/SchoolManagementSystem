@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.MVC.Entites.Models;
+﻿using SchoolManagementSystem.Entites.Models;
+using SchoolManagementSystem.MVC.Entites.Models;
 using SchoolManagementSystem.MVC.Entities.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -24,6 +25,7 @@ namespace SchoolManagementSystem.Models
         public ICollection<ClassSubjectTeacher>? ClassSubjectTeachers { get; set; }
         public ICollection<ExamSchedule>? ExamSchedules { get; set; }
         public ICollection<Marks>? Marks { get; set; }
+        public ICollection<Timetable>? Timetables { get; set; }
 
     }
 }

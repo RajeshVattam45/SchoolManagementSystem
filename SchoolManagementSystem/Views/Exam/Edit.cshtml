@@ -17,6 +17,11 @@
         <input asp-for="ExamDate" type="date" class="form-control" />
         <span asp-validation-for="ExamDate" class="text-danger"></span>
     </div>
+    <div class="form-group">
+        <label asp-for="ExamTypeId"></label>
+        <input asp-for="ExamTypeId" class="form-control" />
+        <span asp-validation-for="ExamTypeId" class="text-danger"></span>
+    </div>
     <button type="submit" class="btn btn-primary">Save</button>
     <a asp-action="Index" class="btn btn-secondary">Back to List</a>
 </form>

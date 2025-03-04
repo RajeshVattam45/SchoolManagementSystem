@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SchoolManagementSystem.Data;
+using SchoolManagementSystem.Models;
 using SchoolManagementSystem.MVC.Entites.Models;
 using SchoolManagementSystem.Repository.Repositories;
+using System.Linq;
 
 namespace SchoolManagementSystem.Repository.Implementation
 {
@@ -30,5 +32,32 @@ namespace SchoolManagementSystem.Repository.Implementation
             await _context.SaveChangesAsync ();
             return true;
         }
+
+        public async Task DeleteExamSubjectAsync ( int id )
+        {
+            var examSubject = await _context.ExamSubjects.FindAsync ( id );
+            if(examSubject != null)
+            {
+                _context.ExamSubjects.Remove ( examSubject );
+                await _context.SaveChangesAsync ();
+            }
+        }
+
+        public async Task<ExamSubject> GetExamSubjectByIdAsync ( int id )
+        {
+            return await _context.ExamSubjects.FindAsync(id);
+        }
+
+        public async Task UpdateExamSubjectAsync ( ExamSubject examSubject )
+        {
+            _context.ExamSubjects.Update(examSubject);
+            await _context.SaveChangesAsync ();
+        }
+
+        //public async Task<ExamSubject> GetExamSchedulesByIdAsync ( int id )
+        //{
+        //    return await _context.ExamSubjects.FindAsync ( id );
+        //}
+
     }
 }

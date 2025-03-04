@@ -24,6 +24,12 @@ namespace SchoolManagementSystem.Data
         public DbSet<Marks> Marks { get; set; }
         public DbSet<StudentAttendance> StudentAttendances { get; set; }
         public DbSet<EmployeeAttendance> EmployeeAttendances { get; set; }
+        public DbSet<FeePayment> FeePayments { get; set; }
+        public DbSet<Timetable> Timetables { get; set; }
+        public DbSet<Holidays> Holidays { get; set; }
+        public DbSet<Events> Events { get; set; }
+        public DbSet<LibraryBooks> LibraryBooks { get; set; }
+        public DbSet<LibraryTransactions> LibraryTransactions { get; set; }
 
         protected override void OnModelCreating ( ModelBuilder modelBuilder )
         {

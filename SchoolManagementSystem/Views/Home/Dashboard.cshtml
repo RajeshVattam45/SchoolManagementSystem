@@ -1,5 +1,7 @@
 ﻿<link rel="stylesheet" href="~/css/Dashboard.css" asp-append-version="true" />
+
 <div class="dashboard-container mt-5">
+
     @if (@ViewBag.UserRole != null)
     {
         <p><strong>@ViewBag.UserRole</strong>: Displaying your data</p>
@@ -50,6 +52,7 @@
                     <li><a asp-controller="Students" asp-action="StudentMarks">View Your Marks</a></li>
                     <li><a asp-controller="Student" asp-action="StudentAttendance">Check Attendance</a></li>
                     <li><a asp-controller="Events" asp-action="Index">Upcoming Events</a></li>
+                    
                 </ul>
             </div>
         </div>

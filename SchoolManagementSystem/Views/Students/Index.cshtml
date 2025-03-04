@@ -4,57 +4,61 @@
     ViewData["Title"] = "All Students";
 }
 
-<p>Displaying Students</p>
+<div class="container">
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Student ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Phone Number</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Permanent Address</th>
-            <th>Current Address</th>
-            <th>Pincode</th>
-            <th>Age</th>
-            <th>Date Of Birth</th>
-            <th>Father Name</th>
-            <th>Father Phone Number</th>
-            <th>Previous School</th>
-            <th>Previous School Percentage</th>
-            <th>Current Class</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var student in Model)
-        {
+    <p>Displaying Students</p>
+
+    <table class="table table-hover table-bordered border-primary">
+        <thead>
             <tr>
-                <td>@student.StudentId</td>
-                <td>@student.FirstName</td>
-                <td>@student.LastName</td>
-                <td>@student.PhoneNumber</td>
-                <td>@student.Email</td>
-                <td>@student.Role</td>
-                <td>@student.PermanentAddress</td>
-                <td>@student.CurrentAddress</td>
-                <td>@student.Pincode</td>
-                <td>@student.Age</td>
-                <td>@student.DateOfBirth.ToString("yyyy-MM-dd")</td>
-                <td>@student.FatherName</td>
-                <td>@student.FatherPhoneNumber</td>
-                <td>@student.PreviousSchool</td>
-                <td>@student.PreviousSchoolPercentage</td>
-                <td>@student.ClassId</td>
-                <td>
-                    <a asp-action="Edit" asp-controller="Students" asp-route-id="@student.Id" class="btn btn-warning btn-sm">Edit</a>
-                    <a asp-action="Delete" asp-controller="Students" asp-route-id="@student.Id" class="btn btn-danger btn-sm">Delete</a>
-                </td>
+                <th>Student ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Permanent Address</th>
+                <th>Current Address</th>
+                <th>Pincode</th>
+                <th>Age</th>
+                <th>Date Of Birth</th>
+                <th>Father Name</th>
+                <th>Father Phone Number</th>
+                <th>Previous School</th>
+                <th>Previous School Percentage</th>
+                <th>Current Class</th>
+                <th>Actions</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.StudentId</td>
+                    <td>@student.FirstName</td>
+                    <td>@student.LastName</td>
+                    <td>@student.PhoneNumber</td>
+                    <td>@student.Email</td>
+                    <td>@student.Role</td>
+                    <td>@student.PermanentAddress</td>
+                    <td>@student.CurrentAddress</td>
+                    <td>@student.Pincode</td>
+                    <td>@student.Age</td>
+                    <td>@student.DateOfBirth.ToString("yyyy-MM-dd")</td>
+                    <td>@student.FatherName</td>
+                    <td>@student.FatherPhoneNumber</td>
+                    <td>@student.PreviousSchool</td>
+                    <td>@student.PreviousSchoolPercentage</td>
+                    <td>@student.ClassId</td>
+                    <td>
+                        <a asp-action="Edit" asp-controller="Students" asp-route-id="@student.Id" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-action="Delete" asp-controller="Students" asp-route-id="@student.Id" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
-<a asp-action="Create" asp-controller="Students" class="btn btn-primary">Add New Student</a>
+    <a asp-action="Create" asp-controller="Students" class="btn btn-primary">Add New Student</a>
+
+</div>

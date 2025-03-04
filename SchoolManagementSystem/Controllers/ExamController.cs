@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SchoolManagementSystem.MVC.Entites.Models;
 using SchoolManagementSystem.Repository.Repositories;
+using SchoolManagementSystem.Service.Implementation;
 using SchoolManagementSystem.Service.ServiceInterface;
 
 namespace SchoolManagementSystem.Controllers
@@ -73,22 +74,61 @@ namespace SchoolManagementSystem.Controllers
             return View ( exam );
         }
 
-        // Delete Exam (GET)
+        //// Delete Exam (GET)
+        //public async Task<IActionResult> Delete ( int id )
+        //{
+        //    var exam = await _examService.GetExamByIdAsync ( id );
+        //    if (exam == null) return NotFound ();
+
+        //    return View ( exam );
+        //}
+
+        //// Delete Exam (POST)
+        //[HttpPost, ActionName ( "Delete" )]
+        //public async Task<IActionResult> DeleteConfirmed ( int id )
+        //{
+        //    await _examService.DeleteExamAsync ( id );
+        //    return RedirectToAction ( nameof ( Index ) );
+        //}
+        // GET: Students/Delete/5
         public async Task<IActionResult> Delete ( int id )
         {
             var exam = await _examService.GetExamByIdAsync ( id );
-            if (exam == null) return NotFound ();
+            if (exam == null)
+            {
+                return NotFound ("Exams Not Found");
+            }
 
             return View ( exam );
         }
 
-        // Delete Exam (POST)
+        // POST: Students/Delete/5
         [HttpPost, ActionName ( "Delete" )]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed ( int id )
         {
             await _examService.DeleteExamAsync ( id );
             return RedirectToAction ( nameof ( Index ) );
         }
+
+
+        //public async Task<IActionResult> Delete ( int id )
+        //{
+        //    var exm = await _examService.GetExamByIdAsync ( id );
+        //    if (exm == null)
+        //        return NotFound ();
+
+        //    return View ( exm );
+        //}
+
+        //// POST: Class/Delete/5
+        //[HttpPost, ActionName ( "Delete" )]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> DeleteConfirmed ( int id )
+        //{
+        //    _examService.DeleteExamAsync ( id );
+        //    return RedirectToAction ( nameof ( Index ) );
+        //}
     }
 
 }

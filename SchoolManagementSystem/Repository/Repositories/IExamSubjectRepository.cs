@@ -6,5 +6,8 @@ namespace SchoolManagementSystem.Repository.Repositories
     {
         Task<List<ExamSubject>> GetAllExamSubjectsAsync ( );
         Task<bool> AddExamSubjectAsync ( ExamSubject examSubject );
+        Task DeleteExamSubjectAsync ( int id );
+        Task<ExamSubject> GetExamSubjectByIdAsync ( int id );
+        Task UpdateExamSubjectAsync ( ExamSubject examSubject );
     }
 }

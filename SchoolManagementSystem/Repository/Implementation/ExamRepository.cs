@@ -25,7 +25,7 @@ namespace SchoolManagementSystem.Repository.Implementation
         public async Task<Exam> GetExamByIdAsync ( int id )
         {
             return await _context.Exams
-                .Include ( e => e.ExamType ) // Include ExamType details
+                .Include ( e => e.ExamType )
                 .FirstOrDefaultAsync ( e => e.ExamId == id );
         }
 
@@ -43,6 +43,13 @@ namespace SchoolManagementSystem.Repository.Implementation
 
         public async Task DeleteExamAsync ( int id )
         {
+            //var exam = await _context.Exams.FindAsync ( id );
+            //if (exam != null)
+            //{
+            //    _context.Exams.Remove ( exam );
+            //    await _context.SaveChangesAsync ();
+            //}
+
             var exam = await _context.Exams.FindAsync ( id );
             if (exam != null)
             {
@@ -50,5 +57,7 @@ namespace SchoolManagementSystem.Repository.Implementation
                 await _context.SaveChangesAsync ();
             }
         }
+
+        
     }
 }
